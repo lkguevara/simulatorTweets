@@ -1,0 +1,14 @@
+.sendTweet{
+    // & corresponde a escribir la clase padre, en este caso .send-tweet
+    &__openModal{
+        position: fixed !important;
+        right: 0;
+        bottom: 0;
+        background-color: #1DA1F2;
+        z-index: 1;
+    }
+
+    button{
+        margin-right: 10px;
+    }
+}
