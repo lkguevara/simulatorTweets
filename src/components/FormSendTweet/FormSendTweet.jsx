@@ -1,11 +1,25 @@
 import "./FormSendTweet.scss"
+import {useState} from "react"
 import { FormControl, FormGroup, TextField, Button } from '@mui/material'
+import PropTypes from 'prop-types';
 
-const FromSendTweet = () => {
+const FromSendTweet = ({sendTweet}) => {
+    
+    const [form, setForm] = useState({
+        tweet: ""
+    });
+
+    const formChange = (e) => {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        })
+    }
+
   return (
     <div className="formSendTweet">
         <h2 className="formSendTweet__title">Enviar Tweet</h2>
-        <form className="formSendTweet__form">
+        <form className="formSendTweet__form" onSubmit={(e) => sendTweet(e, form)} onChange={formChange}>
             <FormControl>
                 <FormGroup>
                     <TextField
@@ -24,6 +38,10 @@ const FromSendTweet = () => {
         </form>
     </div>
   )
+}
+
+FromSendTweet.propTypes={
+    sendTweet: PropTypes.string.isRequired
 }
 
 export default FromSendTweet

@@ -24,6 +24,6 @@ ModalContainer.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     closeModal: PropTypes.func.isRequired,
     children: PropTypes.node
-  };
+};
 
 export default ModalContainer
