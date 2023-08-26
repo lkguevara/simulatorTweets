@@ -12,7 +12,7 @@ const ModalContainer = ({isOpen, closeModal, children}) => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
-            <div>
+            <div className="modalContainer__title">
                 {children}
             </div>
         </Modal>
