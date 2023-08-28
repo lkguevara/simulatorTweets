@@ -17,8 +17,27 @@
         margin-top: 10px;
     }
 
+    .iconClose{
+        display: block; 
+        position: relative;
+        left: 85%;
+        outline: none;
+
+    }
+
+    .iconClose svg{
+        // posicionar a la derecha superio
+        cursor: pointer;
+        border: none;
+
+    }
+
     @media(min-width: 768px){
         width: 500px;
+
+        .iconClose{
+            left: 95%;
+        }
     }
 
     @media(min-width: 1024px){
