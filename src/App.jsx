@@ -32,7 +32,7 @@ function App() {
     <>
       <Container className="tweets-simulator" maxWidth={false}>
         <Header />
-        <SendTweet setOpen={setOpen} allTweets={allTweets}/>
+        <SendTweet setOpen={setOpen} allTweets={allTweets} setAllTweets={setAllTweets}/>
         <ListTweets allTweets={allTweets} deleteTweets={deleteTweets}/>
         <Snackbar 
           anchorOrigin={{

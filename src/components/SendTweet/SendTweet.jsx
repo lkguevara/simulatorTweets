@@ -7,7 +7,7 @@ import FromSendTweet from "../FormSendTweet/FormSendTweet"
 import moment from 'moment'
 import {TWEETS_STORAGE} from "../../utils/constants"
 
-const SendTweet = ({setOpen, allTweets}) => {
+const SendTweet = ({setOpen, allTweets, setAllTweets}) => {
   const [isOpen, setIsOpenModal] = useState(false)
 
   const openModal = () => {
@@ -26,7 +26,6 @@ const SendTweet = ({setOpen, allTweets}) => {
     allTweets ? allTweetsArr = allTweets : null;
 
     if(!tweet){
-      console.log('todos los campos son obligatorios')
       setOpen({
         open: true,
         text: 'todos los campos son obligatorios'
@@ -35,7 +34,7 @@ const SendTweet = ({setOpen, allTweets}) => {
       form.time = moment();
       allTweetsArr.push(form);
       localStorage.setItem(TWEETS_STORAGE, JSON.stringify(allTweetsArr));
-      console.log('Tweet enviado correctamente');
+      setAllTweets(allTweetsArr);
       setOpen({
         open: true,
         text: 'Tweet enviado correctamente'
