@@ -1,0 +1,28 @@
+.listTweetsEmpty {
+    margin-top: 70px !important;
+    text-align: center;
+    color: white;
+}
+
+.listTweets {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin-top: 70px !important;
+    color: white;
+}
+
+@media(min-width: 768px){
+    .listTweets{
+        grid-template-columns: repeat(2, 1fr);
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media(min-width: 1024px){
+    .listTweets{
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 60%;
+    }
+}

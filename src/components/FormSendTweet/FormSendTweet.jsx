@@ -7,7 +7,8 @@ import PropTypes from 'prop-types';
 const FromSendTweet = ({sendTweet, closeModal}) => {
     
     const [form, setForm] = useState({
-        tweet: ""
+        tweet: "",
+        username: ""
     });
 
     const formChange = (e) => {
@@ -27,10 +28,16 @@ const FromSendTweet = ({sendTweet, closeModal}) => {
             <FormControl>
                 <FormGroup>
                     <TextField
+                        className="formSendTweet__textarea"
+                        name="username"
+                        placeholder="Username"
+                        margin="normal"
+                    />
+                    <TextField
                         className="formSendTweet__form-textarea"
                         name="tweet"
                         multiline
-                        rows="6"
+                        rows="4"
                         placeholder="Escribe tu tweet..."
                         margin="normal"
                     />

@@ -1,0 +1,35 @@
+.tweet{
+    padding: 10px;
+    .css-46bh2p-MuiCardContent-root{
+        padding: 10px;
+    }
+    .css-46bh2p-MuiCardContent-root:last-child{
+        padding: 0;
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h5{
+            margin: 0;
+            color: rgb(16, 79, 161);
+        }
+
+        svg{
+            cursor: pointer;
+
+            &:hover{
+                fill: #1da1f2;
+            }
+        }
+    }
+
+    &__date{
+        text-align: right;
+        bottom: 5px;
+        right: 5px;
+        font-size: 12px;
+    }
+
+}
