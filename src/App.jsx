@@ -4,7 +4,8 @@ import { Container, Snackbar } from '@mui/material'
 import SendTweet from './components/SendTweet/SendTweet'
 import { TWEETS_STORAGE } from './utils/constants'
 import ListTweets from './components/ListTweets/ListTweets'
-
+import UsersFollow from './components/UsersFollow/UsersFollow'
+import './index.scss'
 function App() {
   const [open, setOpen] = useState({
     open: false,
@@ -28,8 +29,31 @@ function App() {
     setReloadTweets(true);
   }
 
+  const users = [
+    {
+      userName: 'lkdguevara',
+      name: 'Lian Katherine Guevara',
+      isFollowing: true
+    },
+    {
+      userName: 'simon009',
+      name: 'Simón Arjona',
+      isFollowing: false
+    },
+    {
+      userName: 'ruizpaco',
+      name: 'Paco Ruiz',
+      isFollowing: true
+    },
+    {
+      userName: 'TMChein',
+      name: 'Tomas',
+      isFollowing: false
+    }
+  ]
+
   return (
-    <>
+    <div className='containerTwitter'>
       <Container className="tweets-simulator" maxWidth={false}>
         <Header />
         <SendTweet setOpen={setOpen} allTweets={allTweets} setAllTweets={setAllTweets}/>
@@ -45,7 +69,22 @@ function App() {
           message={<span id='mensaje'>{open.text}</span>}
         />
       </Container>
-    </>
+
+      <div className='follows'>
+        <h2>¿ A Quién seguir?</h2>
+        {
+          users.map((user, index) => (
+            <UsersFollow 
+              key={index} 
+              userName={user.userName} 
+              name={user.name} 
+              initialIsFollowing={user.isFollowing}
+            />
+          ))
+        }
+      </div>
+
+    </div>
   )
 }
 

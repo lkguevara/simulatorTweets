@@ -1,0 +1,99 @@
+.userFollow{
+    color: #fff;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    
+    &__card{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        justify-items: end;
+        align-items: center;
+        margin: 0 40px;
+    }
+
+    .header{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 10px;
+
+        @media (min-width: 768px){
+            .avatar img{
+                margin: 0;
+            }
+        }
+    }
+
+    .tw-followCard-info{
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+
+        h3{
+            margin: 0;
+            font-size: 15px;
+        }
+        p{
+            margin: 0;
+            font-size: 12px;
+            opacity: .6;
+        }
+    }
+
+    .tw-followCard-button{
+        cursor: pointer;
+        border-radius: 20px;
+        border: 1px solid #000;
+        padding: 5px 14px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+        background-color: #fff;
+        outline: none;
+
+    }
+    .tw-followCard-button:hover{
+        background-color: rgb(98, 183, 240);
+        transition: .2s ease background-color;
+        color: white;
+    }
+
+    .tw-followCard-button.is-following{
+        border: 1px solid #bbb;
+        background: transparent;
+        color: #fff;
+        width: 140px;
+    }
+
+    .tw-followCard-button.is-following:hover {
+        background-color: rgba(255, 69, 69, 0.425);
+        color: white;
+        border: 1px solid rgb(98, 183, 240);
+        transition: .3s ease all;
+        opacity: 1;
+      }
+
+      .tw-followCard-text {
+        display: block;
+      }
+
+      .tw-followCard-stopFollow {
+        display: none;
+      }
+      
+      .tw-followCard-button.is-following:hover .tw-followCard-text {
+        display: none;
+      }
+      
+      .tw-followCard-button.is-following:hover .tw-followCard-stopFollow {
+        display: block;
+      }
+      
+      .tw-followCard-stopFollow {
+        display: none;
+      }
+}
